@@ -8,7 +8,7 @@ namespace Emoji_Code_Testing
         }
 
         [Test]
-        public void Test1()
+        public void GetNextTokenStandard()
         {
             Assert.Pass();
         }
