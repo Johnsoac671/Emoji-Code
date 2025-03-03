@@ -1,4 +1,4 @@
-namespace Emoji_Code_Testing
+namespace Emoji_Code_Engine
 {
     public class Tests
     {
@@ -7,9 +7,10 @@ namespace Emoji_Code_Testing
         {
         }
 
-        [Test]
-        public void GetNextTokenStandard()
+        [TestCase("apple")]
+        public void GetNextTokenStandard(string input)
         {
+            
             Assert.Pass();
         }
     }
