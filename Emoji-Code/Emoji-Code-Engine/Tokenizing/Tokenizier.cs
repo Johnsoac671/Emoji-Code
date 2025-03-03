@@ -1,4 +1,5 @@
-﻿using Emoji_Code_Engine.Tokenizing.Tokens;
+﻿using System.Text;
+using Emoji_Code_Engine.Tokenizing.Tokens;
 
 namespace Emoji_Code_Engine.Tokenizing
 {
@@ -7,20 +8,35 @@ namespace Emoji_Code_Engine.Tokenizing
     /// </summary>
     public class Tokenizier
     {
-        private TextReader sourceCode;
+        private StreamReader sourceCode;
 
-        public Tokenizier(TextReader sourceCode)
+        public Tokenizier(StreamReader sourceCode)
         {
             this.sourceCode = sourceCode;
         }
 
         /// <summary>
-        /// Processes the next token in the source code, and returns the approprite Token object
+        /// Processes the next "word" in the source code, and returns the approprite Token object
         /// </summary>
         /// <returns>Token object representing next token in source code</returns>
         public Token GetNextToken()
         {
-            throw new NotImplementedException();
+            StringBuilder stringBuilder = new StringBuilder();
+            char nextChar;
+
+            while (true)
+            {
+                nextChar = (char)sourceCode.Read();
+
+                if ((nextChar == ' ' || nextChar == '\n' || nextChar == '\t') || sourceCode.EndOfStream)
+                {
+                    break;
+                }   
+                
+                stringBuilder.Append(nextChar);
+            }
+
+            return ConvertStringToToken(stringBuilder.ToString());
         }
 
         /// <summary>
