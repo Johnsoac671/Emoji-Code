@@ -9,9 +9,9 @@ namespace Emoji_Code_Engine.Tokenizing.Tokens
     /// <summary>
     /// A token representing a literal value
     /// </summary>
-    internal abstract class LiteralToken<T> : Token<T>
+    public abstract class LiteralToken : Token
     {
-        protected LiteralToken(T value) : base(value)
+        protected LiteralToken(string value) : base(value)
         {
         }
     }

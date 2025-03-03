@@ -9,7 +9,7 @@ namespace Emoji_Code_Engine.Tokenizing.Tokens
     /// <summary>
     /// A token representing an operator
     /// </summary>
-    internal class OperatorToken : Token<string>
+    public class OperatorToken : Token
     {
         public OperatorToken(string value) : base(value) { }
     }

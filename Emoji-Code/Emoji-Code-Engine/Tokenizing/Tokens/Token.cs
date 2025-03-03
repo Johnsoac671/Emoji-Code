@@ -9,18 +9,17 @@ namespace Emoji_Code_Engine.Tokenizing.Tokens
     /// <summary>
     /// Class representing a single token from the input codestring
     /// </summary>
-    /// <typeparam name="T">The type of the value being input. Only really relevant for Literal values</typeparam>
-    internal abstract class Token<T>
+    public abstract class Token
     {
 
-        private readonly T value;
+        private readonly string value;
 
-        public Token(T value)
+        public Token(string value)
         {
             this.value = value;
         }
 
-        public T Value
+        public string Value
         {
             get
             {

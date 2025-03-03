@@ -9,7 +9,7 @@ namespace Emoji_Code_Engine.Tokenizing.Tokens
     /// <summary>
     /// A token representing a keyword identifier in the code (e.x. print)
     /// </summary>
-    internal abstract class KeywordToken : Token<string>
+    public abstract class KeywordToken : Token
     {
         protected KeywordToken(string value) : base(value)
         {

@@ -9,7 +9,7 @@ namespace Emoji_Code_Engine.Tokenizing.Tokens
     /// <summary>
     /// A token representing a structural element of code (e.x. an End of Line symbol)
     /// </summary>
-    internal class StructureToken : Token<string>
+    public class StructureToken : Token
     {
         public StructureToken(string value): base(value) {}
     }
